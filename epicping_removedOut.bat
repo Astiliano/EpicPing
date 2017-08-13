@@ -87,7 +87,7 @@ ping -n 1 %ipaddr% -4|Findstr /I /C:"TTL" /C:"time=" >nul:
 if %errorlevel%==0 set state=up
 IF !state! == up Time /T && Echo Link is Up && Echo -------- && goto good
 ping -n 6 127.0.0.1 >nul: 2>nul:
-goto out
+goto outloop
 
 
 :good
